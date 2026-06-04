@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="mb-6 md:mb-0">
           <div className="font-headline text-xl font-bold text-primary dark:text-primary-fixed">Ceylon Eco Quest</div>
           <p className="font-body text-sm tracking-wide text-on-surface-variant dark:text-slate-400 mt-2 max-w-xs">
-            Crafting meaningful expeditions through the ancient soul of Sri Lanka.
+            Reconnect with Nature, Respect Every Step.
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-8">
