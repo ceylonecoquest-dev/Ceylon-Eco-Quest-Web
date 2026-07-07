@@ -4,10 +4,7 @@ Ceylon Eco Quest is a simple travel website designed to promote eco-friendly tou
 
 Live Demo 🌐 :
 
-<img width="265" height="169" alt="live demo" src="https://github.com/user-attachments/assets/e8bb900d-0563-499a-8640-c640b895b4cb" />
 
-
-https://ceylon-eco-quest-f2lvifffb-divanimanarandis-projects.vercel.app/
 
 
 ## React + Vite
