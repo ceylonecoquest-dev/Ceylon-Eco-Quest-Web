@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import VideoBackground from '../components/VideoBackground';
+import ImageSlideshow from '../components/ImageSlideshow';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -23,14 +26,89 @@ const fadeInRight = {
   transition: { duration: 0.8, ease: "easeOut" }
 };
 
+const heritageSites = [
+  {
+    title: 'Sacred City of Anuradhapura',
+    image: '/images/anuradhapura_home.jpeg',
+    description:
+      "which is a UNESCO World Heritage Site remaining a sacred pilgrimage destinations as well as with popular tourist attractions. It is one of the oldest and most important ancient cities in Sri Lanka. It served as the country's first capital for over 1000 years and it is a major center of Buddhist culture and heritage. It is famous for its well-preserved ruins of ancient civilization, including large stupas, monasteries, and irrigation systems. With having important sites including Sri Maha Bodhi, believed to be the oldest historically recorded tree in the world, and the Ruwanwelimahaseya, which is a magnificent white Stupa.",
+  },
+  {
+    title: 'Ancient City of Polonnaruwa',
+    image: '/images/polonnaruwa-home.jpg',
+    description:
+      "which also a UNESCO World Heritage Site and a major cultural and historical tourist destination in Sri Lanka Ancient City in Sri Lanka and Served as the country's second capital after Anuradhapura. It is well known for it's well-preserved archeological ruins, reflecting advanced urban planning, irrigation system and beautiful architecture. Historical places including Gal Viharaya, famous for its large Buddha Statues carved into Rock, and the Parakrama Samudra, which is a massive man-made lake built by Kind Parakramabahu 1.",
+  },
+  {
+    title: 'Ancient City of Sigiriya',
+    image: '/images/sigiriya-home.jpg',
+    description:
+      "The Sigiriya Rock which is a UNESCO World Heritage Site and one of most iconic tourist attractions. It is known as the Lion Rock, which is a famous ancient rock fortress in Sri Lanka. It was built in the 5th century CE by king Kashyapa. I as a royal palace and stronghold. The site is renowned for its massive rock column rising about 200 meters high surrounded by landscapes gardens, water, features and frescoces. The ancient city of Sigiriya also famous for its surrounded by well-planed gardens, advanced irrigation systems, and also the architectural and engineering brilliance of ancient Sri Lanka.",
+  },
+  {
+    title: 'Sacred City of Kandy',
+    image: '/images/kandy.jpeg',
+    description:
+      "The Sacred city of Kandy which is also a UNESCO World heritage site and a major cultural and tourist destination in Sri Lanka. The sacred city of Kandy which is a historic and spiritual city that served as the last capital of the Sri Lankan kingdom. It is best know for the temple of the Tooth Relic, which houses a sacred tooth of Gautama Buddha. It makes Kandy one of the most important religious sites for Buddhists around the world. The city is also surrounded by scenic hills and a beautiful lake, also Kandy which famous for it's cultural traditions, especially the annual Esala Perahara.",
+  },
+  {
+    title: 'Old Town of Galle',
+    image: '/images/galle.jpeg',
+    description:
+      "The old town of Galle and it's fortifications are recognized as a UNESCO world heritage site and remain a popular tourist destination in Sri Lanka. It is located on the southern coast of Sri Lanka which is a historic city know for it's well-preserved colonial architecture. It is famous for the Galle Fort, originally built by the Portuguese in the 16th century and later expanded by the dutch. The Fort features cobblestones streets, old churches, museums, and charming building that reflects European and South Asian influences.",
+  },
+  {
+    title: 'Rangiri Dambulla Cave Temple',
+    image: '/images/rangiri dambulla.jpeg',
+    description:
+      "The temple is an important religious pilgrimage site and showcases impressive ancient Buddhist art and architecture and today. it is recognized as a UNESCO World Heritage site. The Rangiri Dambulla Cave Temple, located in Sri Lanka is the largest and best-preserved cave temple complex in the country. Special factor that which is in the 1st century BCE, it consists of five caves filled with over ISO satutues of Gautama Buddha along with painting covering the walls and celings.",
+  },
+  {
+    title: 'Sinharaja Forest Reserve',
+    image: '/images/sinharaja_forest.png',
+    description:
+      "which is a UNESCO World Heritage Sites and a popular destination for eco-tourism and nature lovers located in Sri Lanka which is a tropical rainforest and the country's last viable area of primary forest. It is reowned for it's rich bio-diversity, including money endemic species of plants, birds and animals found no where else in the world. The forest plays a vital role in conserving Sri Lanka's natural eco system.",
+  },
+  {
+    title: 'Central Highlands of Sri Lanka',
+    image: '/images/central_highlands.png',
+    description:
+      "which is located in the South-central part of Sri Lanka which is a UNESCO World Heritage natural site known for its stunning mountain landscape and rich biodiversity. Central Highlands includes the key protected areas such as Hortain Plains National Park, Peak Wilderness Sanctuary, and knuckles Conservation forest. It is very famous for it's unique flora and fauna, many of which are endemic, as well as scenic features like waterfalls, grasslands, and misty mountains. The area is also important for water catchment and environmental conservation.",
+  },
+];
+
+
 const Home = () => {
+  const scrollRef = useRef(null);
+
+  const scrollByCard = (direction) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const card = container.querySelector('[data-card]');
+    const cardWidth = card ? card.offsetWidth + 24 : 320;
+    container.scrollBy({
+      left: direction === 'left' ? -cardWidth : cardWidth,
+      behavior: 'smooth',
+    });
+  };
+
+  const homeSlides = [
+    '/images/home/Home banner1.jpeg',
+    '/images/home/Home banner2.jpeg',
+    '/images/home/Home banner3.jpeg',
+    '/images/home/Home banner4.jpeg',
+    '/images/home/Home banner5.jpeg',
+    '/images/home/Home banner6.jpeg',
+  ];
+
   return (
     <main>
       {/* Hero Section */}
       <header className="relative h-[100vh] flex items-center justify-center overflow-hidden">
-        <VideoBackground />
+        {/* <VideoBackground /> */}
+        <ImageSlideshow images={homeSlides} />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/50 to-surface z-10"></div>
-        <motion.div 
+        <motion.div
           className="relative z-20 text-center px-6 max-w-5xl pt-20"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -89,9 +167,9 @@ const Home = () => {
       </section>
 
       {/* UNESCO Heritage Description Section */}
-      <section className="bg-surface py-20 relative overflow-hidden px-8">
+      <section className="bg-surface py-16 lg:py-20 relative overflow-hidden px-6 md:px-8">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
-        <motion.div 
+        <motion.div
           className="max-w-5xl mx-auto relative z-10 text-center"
           {...fadeInUp}
         >
@@ -101,178 +179,81 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Sacred City of Anuradhapura*/}
-      <section className="relative bg-surface-container-low py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary/35 via-primary/5 to-primary/20 pointer-events-none"></div>
-        <div className="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-          <motion.div className="lg:col-span-7 relative" {...fadeInLeft}>
-            <div className="absolute -top-8 -left-10 w-64 h-64 bg-secondary-container/40 rounded-full blur-3xl"></div>
-            <img
-              className="w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl relative z-10"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-3c71bLSaVcFNXqSCq0DedQZFzvpNiSpExeFVsXKzQT3puRV1At5B1UI1OuUc6-W5gOZ6fpAaTR29q17LmXpjPN3mC77nl3biSsPfCKAD3snNwLGTWOwtbteZLC7cUzrrIJEhtHVUiCTqP-eGJsgQFV4OwZmjEGZROXaUZ2p1xBo70zI3VLmzMPSVl0rQ2J7JT-HE19HYzVALBOWV5vCXM8c5XkV1-ivRSUumocJOqwc3thOdOH5QySttNUvQxgP8eFbpNXUh3O4"
-              alt="Ancient stone temple ruins at sunrise"
-            />
-            <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-primary/30 rounded-full blur-3xl"></div>
-          </motion.div>
-          <motion.div className="lg:col-span-5 space-y-8 text-center text-center" {...fadeInRight}>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-on-surface text-center">Sacred City of Anuradhapura</h2>
-            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed text-center">
-              which is a UNESCO World Heritage Site remaining a sacred pilgrimage destinations as well as with popular tourist attractions. It is one of the oldest and most important ancient cities in Sri Lanka. It served as the country's first capital for over 1000 years and it is a major center of Buddhist culture and heritage. It is famous for its well-preserved ruins of ancient civilization, including large stupas, monasteries, and irrigation systems. With having important sites including Sri Maha Bodhi, believed to be the oldest historically recorded tree in the world, and the Ruwanwelimahaseya, which is a magnificent white Stupa.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* UNESCO Heritage Sites — horizontal card carousel */}
+      <section className="relative bg-surface-container-low py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5 pointer-events-none"></div>
 
-      {/*Ancient City of Polonnaruwa */}
-      <section className="relative bg-surface py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-bl from-secondary-container/20 via-primary/10 to-primary/25 pointer-events-none"></div>
-        <div className="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-          <motion.div className="lg:col-span-5 space-y-8 order-2 lg:order-1 text-center" {...fadeInLeft}>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-on-surface text-center">Ancient City of Polonnaruwa</h2>
-            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed text-center">
-              which also a UNESCO World Heritage Site and a major cultural and historical tourist destination in Sri Lanka Ancient City in Sri Lanka and Served as the country's second capital after Anuradhapura. It is well known for it's well-preserved archeological ruins, reflecting advanced urban planning, irrigation system and beautiful architecture. Historical places including Gal Viharaya, famous for its large Buddha Statues carved into Rock, and the Parakrama Samudra, which is a massive man-made lake built by Kind Parakramabahu 1.
-            </p>
-          </motion.div>
-          <motion.div className="lg:col-span-7 relative order-1 lg:order-2" {...fadeInRight}>
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/25 rounded-full blur-3xl"></div>
-            <img
-              className="w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl relative z-10"
-              src="/images/polonnaruwa_gal_viharaya.png"
-              alt="Ancient City of Polonnaruwa"
-            />
-            <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-secondary-container/30 rounded-full blur-3xl"></div>
-          </motion.div>
-        </div>
-      </section>
+        <div className="max-w-screen-2xl mx-auto px-6 md:px-8 relative z-10">
+          {/* Section header */}
+          <motion.div
+            className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12"
+            {...fadeInUp}
+          >
+            <div>
+              <span className="inline-flex items-center gap-2 text-primary font-medium text-sm uppercase tracking-[0.2em] mb-3">
+                <MapPin className="w-4 h-4" />
+                8 UNESCO World Heritage Sites
+              </span>
+              <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-on-surface">
+                Sri Lanka's World Heritages
+              </h2>
+            </div>
 
-      {/* Ancient City of Sigiriya*/}
-      <section className="relative bg-surface-container-low py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-primary/5 to-secondary-container/25 pointer-events-none"></div>
-        <div className="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-          <motion.div className="lg:col-span-7 relative" {...fadeInLeft}>
-            <div className="absolute -top-10 -left-10 w-64 h-64 bg-secondary-container/40 rounded-full blur-3xl"></div>
-            <img
-              className="w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl relative z-10"
-              src="https://images.unsplash.com/photo-1588614959060-4d144f28b207?q=80&w=2000&auto=format&fit=crop"
-              alt="Ancient City of Sigiriya"
-            />
-            <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-primary/35 rounded-full blur-3xl"></div>
-          </motion.div>
-          <motion.div className="lg:col-span-5 space-y-8 text-center" {...fadeInRight}>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-on-surface text-center">Ancient City of Sigiriya</h2>
-            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed text-center">
-              The Sigiriya Rock which is a UNESCO World Heritage Site and one of most iconic tourist attractions. It is known as the "Lion Rock", which is a famous ancient rock fortress in Sri Lanka. It was built in the 5th century CE by king Kashyapa. I as a royal palace and stronghold. The site is renowned for its massive rock column rising about 200 meters high surrounded by landscapes gardens, water, features and frescoces. The ancient city of Sigiriya also famous for it's surrounded by well-planed gardens, advanced irrigation systems, and also the architectural and engineering brilliance of ancient Sri Lanka.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+            {/* Nav buttons */}
+            <div className="flex items-center gap-3 self-start md:self-auto">
+              {/* <button
+                onClick={() => scrollByCard('left')}
+                aria-label="Scroll left"
+                className="w-11 h-11 rounded-full border border-on-surface/20 flex items-center justify-center hover:bg-surface-container-highest transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5 text-on-surface" />
+              </button>
+              <button
+                onClick={() => scrollByCard('right')}
+                aria-label="Scroll right"
+                className="w-11 h-11 rounded-full border border-on-surface/20 flex items-center justify-center hover:bg-surface-container-highest transition-colors"
+              >
+                <ChevronRight className="w-5 h-5 text-on-surface" />
+              </button> */}
 
-      {/* Sacred City of Kandy */}
-      <section className="relative bg-surface py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-bl from-secondary-container/20 via-primary/10 to-primary/25 pointer-events-none"></div>
-        <div className="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-          <motion.div className="lg:col-span-5 space-y-8 order-2 lg:order-1 text-center" {...fadeInLeft}>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-on-surface text-center">Sacred City of Kandy</h2>
-            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed text-center">
-              The Sacred city of Kandy which is also a UNESCO World heritage site and a major cultural and tourist destination in Sri Lanka. The sacred city of Kandy which is a historic and spiritual city that served as the last capital of the Sri Lankan kingdom. It is best know for the temple of the Tooth Relic, which houses a sacred tooth of Gautama Buddha. It makes Kandy one of the most important religious sites for Buddhists around the world. The city is also surrounded by scenic hills and a beautiful lake, also Kandy which famous for it's cultural traditions, especially the annual Esala Perahara.
-            </p>
+              <button onClick={() => scrollByCard('left')} aria-label="Scroll left" className="w-11 h-11 rounded-full border border-on-surface/20 flex items-center justify-center hover:bg-surface-container-highest transition-colors text-xl">
+                ‹
+              </button>
+              <button onClick={() => scrollByCard('right')} aria-label="Scroll right" className="w-11 h-11 rounded-full border border-on-surface/20 flex items-center justify-center hover:bg-surface-container-highest transition-colors text-xl">
+                ›
+              </button>
+            </div>
           </motion.div>
-          <motion.div className="lg:col-span-7 relative order-1 lg:order-2" {...fadeInRight}>
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/25 rounded-full blur-3xl"></div>
-            <img
-              className="w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl relative z-10"
-              src="/images/kandy_temple.png"
-              alt="Temple of the Tooth Relic in Kandy"
-            />
-            <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-secondary-container/30 rounded-full blur-3xl"></div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Old Town of Galle */}
-      <section className="relative bg-surface-container-low py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-primary/5 to-secondary-container/25 pointer-events-none"></div>
-        <div className="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-          <motion.div className="lg:col-span-7 relative" {...fadeInLeft}>
-            <div className="absolute -top-10 -left-10 w-64 h-64 bg-secondary-container/40 rounded-full blur-3xl"></div>
-            <img
-              className="w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl relative z-10"
-              src="/images/galle_fort.png"
-              alt="Galle Fort in Sri Lanka"
-            />
-            <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-primary/35 rounded-full blur-3xl"></div>
-          </motion.div>
-          <motion.div className="lg:col-span-5 space-y-8 text-center" {...fadeInRight}>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-on-surface text-center">Old Town of Galle</h2>
-            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed text-center">
-              The old town of Galle and it's fortifications are recognized as a UNESCO world heritage site and remain a popular tourist destination in Sri Lanka. It is located on the southern coast of Sri Lanka which is a historic city know for it's well-preserved colonial architecture. It is famous for the Galle Fort, originally built by the Portuguese in the 16th century and later expanded by the dutch. The Fort features cobblestones streets, old churches, museums, and charming building that reflects European and South Asian influences.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Rangiri Dambulla Cave Temple */}
-      <section className="relative bg-surface py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-bl from-secondary-container/20 via-primary/10 to-primary/25 pointer-events-none"></div>
-        <div className="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-          <motion.div className="lg:col-span-5 space-y-8 order-2 lg:order-1 text-center" {...fadeInLeft}>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-on-surface text-center">Rangiri Dambulla Cave Temple</h2>
-            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed text-center">
-              The temple is an important religious pilgrimage site and showcases impressive ancient Buddhist art and architecture and today. it is recognized as a UNESCO World Heritage site. The Rangiri Dambulla Cave Temple, located in Sri Lanka is the largest and best-preserved cave temple complex in the country. Special factor that which is in the 1st century BCE, it consists of five caves filled with over ISO satutues of Gautama Buddha along with painting covering the walls and celings.
-            </p>
-          </motion.div>
-          <motion.div className="lg:col-span-7 relative order-1 lg:order-2" {...fadeInRight}>
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/25 rounded-full blur-3xl"></div>
-            <img
-              className="w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl relative z-10"
-              src="/images/dambulla_cave.png"
-              alt="Rangiri Dambulla Cave Temple"
-            />
-            <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-secondary-container/30 rounded-full blur-3xl"></div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Sinharaja Forest Reserve */}
-      <section className="relative bg-surface-container-low py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-primary/5 to-secondary-container/25 pointer-events-none"></div>
-        <div className="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-          <motion.div className="lg:col-span-7 relative" {...fadeInLeft}>
-            <div className="absolute -top-10 -left-10 w-64 h-64 bg-secondary-container/40 rounded-full blur-3xl"></div>
-            <img
-              className="w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl relative z-10"
-              src="/images/sinharaja_forest.png"
-              alt="Sinharaja Forest Reserve"
-            />
-            <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-primary/35 rounded-full blur-3xl"></div>
-          </motion.div>
-          <motion.div className="lg:col-span-5 space-y-8 text-center" {...fadeInRight}>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-on-surface text-center">Sinharaja Forest Reserve</h2>
-            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed text-center">
-              which is a UNESCO World Heritage Sites and a popular destination for eco-tourism and nature lovers located in Sri Lanka which is a tropical rainforest and the country's last viable area of primary forest. It is reowned for it's rich bio-diversity, including money endemic species of plants, birds and animals found no where else in the world. The forest plays a vital role in conserving Sri Lanka's natural eco system.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Central Highlands of Sri Lanka */}
-      <section className="relative bg-surface py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-bl from-secondary-container/20 via-primary/10 to-primary/25 pointer-events-none"></div>
-        <div className="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-          <motion.div className="lg:col-span-5 space-y-8 order-2 lg:order-1 text-center" {...fadeInLeft}>
-            <h2 className="font-headline text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-on-surface text-center">Central Highlands of Sri Lanka</h2>
-            <p className="text-base md:text-lg text-on-surface-variant leading-relaxed text-center">
-              which is located in the South-central part of Sri Lanka which is a UNESCO World Heritage natural site known for its stunning mountain landscape and rich biodiversity. Central Highlands includes the key protected areas such as Hortain Plains National Park, Peak Wilderness Sanctuary, and knuckles Conservation forest. It is very famous for it's unique flora and fauna, many of which are endemic, as well as scenic features like waterfalls, grasslands, and misty mountains. The area is also important for water catchment and environmental conservation.
-            </p>
-          </motion.div>
-          <motion.div className="lg:col-span-7 relative order-1 lg:order-2" {...fadeInRight}>
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/25 rounded-full blur-3xl"></div>
-            <img
-              className="w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl relative z-10"
-              src="/images/central_highlands.png"
-              alt="Central Highlands of Sri Lanka"
-            />
-            <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-secondary-container/30 rounded-full blur-3xl"></div>
+          {/* Horizontal scrolling cards */}
+          <motion.div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            {...fadeInUp}
+          >
+            {heritageSites.map((site) => (
+              <div
+                key={site.title}
+                data-card
+                className="snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[320px] bg-surface rounded-2xl shadow-lg overflow-hidden flex flex-col"
+              >
+                <div className="w-full h-[180px] sm:h-[200px] overflow-hidden">
+                  <img
+                    src={site.image}
+                    alt={site.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-5 flex flex-col gap-2 flex-1">
+                  <h3 className="font-headline text-lg font-semibold text-on-surface leading-snug">
+                    {site.title}
+                  </h3>
+                  <p className="text-sm text-on-surface-variant leading-relaxed">
+                    {site.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>

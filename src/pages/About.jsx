@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ImageSlideshow from '../components/ImageSlideshow';
 
 const About = () => {
   const [expandedTopic, setExpandedTopic] = useState(null);
@@ -28,7 +29,7 @@ const About = () => {
           <p>Since We Interacts with natural habitats, wildlife & Local Environment. Our Goal Is to minimize negative environmental impacts while we are on our travel journey as well as when we are connected with the nature.</p>
           <p>Ecology which is very important that It Preserves natural resources, promotes Sustainable development & Educates Us through how we need to protect the environment.</p>
           <p>Let's Stop Some Habits which will Give a Negative Impact to the nature and the environment.</p>
-          <p>"Ceylon Eco Quest" We Suggest You To Minimize the Usage of Plastic & To Minimize the Wastage of Water Usage in a these Unnecessary manner.</p>
+          <p>"Ceylon Eco Quest" We Suggest You To Minimize the Wastage of Water Usage in an unnecessary manner.</p>
           <p>As Ceylon Eco Quest We Take You Through The Wildlife Experience. It's a very Important that Not To Harm Animals as well as feeding animals uncovered or under restricted areas.</p>
           <p>Let's Protect ecology while we Are On the tour by experiencing the beautiful nature in Srilanka while conserving the environment and benefiting local communities.</p>
         </div>
@@ -39,7 +40,7 @@ const About = () => {
       description: (
         <div className="space-y-4">
           <p>Environmental Sustainability which is a very important factor in tourism industry it refers to responsible travel practices that protect natural environments, conserve resources, and support the long-term well-being of destinations and local communities. Our concept of Ceylon Eco Quest is closely connected with the environmental sustainability. It is very important, know the related factors regarding environmental sustainability. As tourism is one of the Sri Lanka's major industries, sustainability has become essential for preserving the island's forests, beaches, wildlife, marine eco-systems, and cultural heritage for future generation.</p>
-          <p>Since Sri Lanka is known for its rich biodiversity, tropical rain forests, wildlife reserves, mountains, and coastal ecosystems. Ceylon Eco Quest We Are Ready to Take You through a journey with a Sustainable Tourism Tour with connected to the natural environment. So Ceylon Eco Quest we suggest to follow some important points on Environmental sustainability, during the tour journey.</p>
+          <p>Since Sri Lanka is known for its rich biodiversity, tropical rain forests, wildlife reserves, mountains, and coastal ecosystems. Ceylon Eco Quest We Are Ready to Take You through a journey with a Sustainable Tour with connected to the natural environment. So Ceylon Eco Quest we suggest to follow some important points on Environmental sustainability, throughout your journey.</p>
           <ul className="list-disc pl-5 space-y-2">
             <li>To Protect natural resources and wildlife habitats.</li>
             <li>To Reduce environmental damage caused by mass tourism.</li>
@@ -106,7 +107,7 @@ const About = () => {
             <li>Ayurveda and wellness treats.</li>
             <li>Community-based cultural experience.</li>
           </ul>
-          <p>Following all these eco-friendly tips. Let's travel the journey with a peaceful vibe which also brings same benefit for Eco-friendly , Tourism traveling Eco-friendly will helps.</p>
+          <p>Following all these eco-friendly tips, Let's travel the journey with a peaceful vibe which also brings a benefit for Eco-friendly tourism.</p>
           <ul className="list-disc pl-5 space-y-2">
             <li>To protect Sri Lanka's Wildlife and ecosystems.</li>
             <li>To preserve cultural and historical heritages.</li>
@@ -130,7 +131,7 @@ const About = () => {
             Ceylon Eco Quest we are ready to take you to the spiritual and cultural connections in Sri Lanka to give and experience of a mindful tour. So travelers can explore ancient temples, meditation centers, and sacred cities while learning about Buddhism and traditional Sri Lanka values.
           </p>
           <p>
-            We are also ready to you through the nature and store travel experience to give a mindful exploration often involves slow and immersive travel through nature. Visitors can enjoy scenic train rides, walk through tea plantations, rainforest, and quiet moments near waterfall or beaches.
+            We are also ready to take you through the nature and slow travel experience to give a mindful exploration often involves slow and immersive travel through nature. Visitors can enjoy scenic train rides, walk through tea plantations, rainforest, and quiet moments near waterfall or beaches.
           </p>
           <p>
             Wellness and Meditation which is well-known in Sri Lanka for Ayurveda, Yoga retreats, and meditation programs. Ceylon Eco Quest is ready to provide you the experience of wellness and meditation with having Many Wellness centers around Sri Lanka that provide holistic treatments using herbal medicine, healthy food, yoga practices, and stress-relief therapies. Let's relax physically and mentally while reconnecting with themselves.
@@ -155,7 +156,7 @@ const About = () => {
             <li>Authentic and meaningful travel experiences</li>
           </ul>
           <p>
-            Going on we the concept of Mindful exploration, Ceylon Eco Quest we are ready to transform your travel into a journey of awareness, discovery, and personal growth, with its spiritual heritage, natural beauty, wellness traditions, and warm hospitality , Sri Lanka offers and unforgettable destination for travelers seeking peace, balance, and meaningful experiences.
+            Going on with the concept of Mindful exploration, Ceylon Eco Quest we are ready to transform your travel into a journey of awareness, discovery, and personal growth, with its spiritual heritage, natural beauty, wellness traditions, and warm hospitality , Sri Lanka offers and unforgettable destination for travelers seeking peace, balance, and meaningful experiences.
           </p>
         </div>
       )
@@ -185,20 +186,27 @@ const About = () => {
 
   ];
 
+  const destinationsSlides = [
+    '/images/about/about1.jpeg',
+    '/images/about/about2.jpeg',
+    '/images/about/about3.jpeg',
+    '/images/about/about4.jpeg',
+  ];
   return (
     <main>
       {/* Hero Section */}
-      <header className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <header className="relative h-[100vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          {/* <img
             alt="Majestic Sri Lankan Landscape"
             className="w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-qFLIYl2dAfdwVHRchxc1uqUbBjXIOTqpwVggbUXDtVmqJkTntVBeI6ScenrYLzvc5SDQKLePLV8N5O3eZuLtqB_V9qub1wuivbLbWYSovpM0Otlx9HKla89GJUqUh5ijxchEeH6wZMEoBoljcmDG6d1JzKXgNt7REkby7eiGcX_EsQ8785eYmovMl9CqCElk9a_xeoHWhd8xeMfozYQk8glbcbZkNDjCMY_jbpPkczDqRgohzAA9rYB1uVlCBI6ArLeCY6bMKF8"
-          />
+          /> */}
+          <ImageSlideshow images={destinationsSlides} />
           <div className="absolute inset-0 bg-primary/20"></div>
         </div>
         <div className="relative z-10 text-center px-6 max-w-5xl">
-          <span className="font-bold font-label text-secondary uppercase tracking-[0.5em] text-sm mb-6 block">Our Identity</span>
+          <span className="font-bold font-label text-secondary-container uppercase tracking-[0.5em] text-sm mb-6 block">Our Identity</span>
           <h1 className="font-headline text-5xl md:text-8xl text-white font-black leading-tight italic">
             The Spirit of <br />Ceylon Eco Quest
           </h1>
@@ -206,7 +214,7 @@ const About = () => {
       </header>
 
       {/* Theme Section */}
-      <section className="py-24 bg-surface-container-lowest px-8 md:px-12 lg:px-24">
+      <section className="py-16 md:py-24 bg-surface-container-lowest px-6 md:px-12 lg:px-24">
         <div className="max-w-screen-xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             <div className="space-y-6">
@@ -227,7 +235,7 @@ const About = () => {
               <div className="h-1 w-12 bg-primary"></div>
               <h3 className="font-headline text-3xl font-bold text-primary italic">Quest</h3>
               <p className="text-on-surface-variant leading-relaxed text-lg font-body">
-                An adventure designed to discover the environment intimately. We don't just show you places; we guide you through transformative experiences.
+                An adventure designed to discover the environment intimately. Having those magical treasures we don't just show you places, we guide You through transformative experiences
               </p>
             </div>
           </div>
@@ -276,37 +284,56 @@ const About = () => {
       </section> */}
 
       {/* Topics Section */}
-      <section className="py-24 bg-background px-8 md:px-12 lg:px-24">
+      {/* Topics Section */}
+      <section className="py-16 md:py-24 bg-background px-6 md:px-12 lg:px-24">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
             <span className="font-bold font-label text-primary tracking-widest uppercase text-xs">Our Focus</span>
             <h2 className="font-headline text-4xl md:text-5xl text-on-surface leading-tight font-bold">Key Pillars of Our Journey</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto flex flex-col divide-y divide-outline-variant/20 border-t border-b border-outline-variant/20">
             {topics.map((topic, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 border border-outline-variant/30 group"
-              >
+              <div key={idx} className="group relative">
                 <div
-                  className="p-8 cursor-pointer flex justify-between items-center bg-surface-container relative overflow-hidden"
+                  className={`absolute left-0 top-0 h-full w-1 bg-primary transition-all duration-500 ${expandedTopic === idx ? 'opacity-100' : 'opacity-0'
+                    }`}
+                ></div>
+
+                <div
+                  className="py-8 md:py-10 pl-6 md:pl-10 pr-6 cursor-pointer flex items-center gap-6 md:gap-10"
                   onClick={() => setExpandedTopic(expandedTopic === idx ? null : idx)}
                 >
-                  <div className="absolute top-0 left-0 w-1.5 h-full bg-primary transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
-                  <h3 className="font-headline text-2xl font-bold text-on-surface group-hover:text-primary transition-colors ml-2">{topic.title}</h3>
-                  <button className="text-primary p-2 rounded-full bg-primary/5 hover:bg-primary/10 transition-colors">
-                    <svg className={`w-6 h-6 transition-transform duration-500 ${expandedTopic === idx ? 'rotate-180' : 'rotate-0'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <span
+                    className={`font-headline text-4xl md:text-6xl font-black leading-none shrink-0 transition-colors duration-500 ${expandedTopic === idx ? 'text-primary' : 'text-outline-variant/50'
+                      }`}
+                  >
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+
+                  <h3 className="font-headline text-xl md:text-3xl font-bold text-on-surface group-hover:text-primary transition-colors flex-1">
+                    {topic.title}
+                  </h3>
+
+                  <button className="text-primary p-2 rounded-full bg-primary/5 hover:bg-primary/10 transition-colors shrink-0">
+                    <svg
+                      className={`w-5 h-5 md:w-6 md:h-6 transition-transform duration-500 ${expandedTopic === idx ? 'rotate-45' : 'rotate-0'
+                        }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                     </svg>
                   </button>
                 </div>
 
                 <div
-                  className={`transition-all duration-700 ease-in-out overflow-hidden grid ${expandedTopic === idx ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                  className={`transition-all duration-700 ease-in-out overflow-hidden grid ${expandedTopic === idx ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="p-8 pt-6 text-on-surface-variant font-body text-[17px] leading-relaxed border-t border-outline-variant/10">
+                    <div className="pb-10 pl-6 md:pl-10 pr-6 md:pr-16 text-on-surface-variant font-body text-[17px] leading-relaxed">
                       {topic.description}
                     </div>
                   </div>
@@ -318,7 +345,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-32 bg-surface-container-lowest px-8 md:px-12 lg:px-24 relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 bg-surface-container-lowest px-6 md:px-12 lg:px-24 relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3"></div>
@@ -329,112 +356,105 @@ const About = () => {
             <h2 className="font-headline text-4xl md:text-5xl text-on-surface leading-tight font-bold">The Minds Behind the Quest</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+          <div className="flex flex-col gap-16 md:gap-20">
 
-            {/* Founder Card */}
-            <div className="group flex flex-col gap-10 bg-background p-10 md:p-14 rounded-[2.5rem] shadow-lg hover:shadow-2xl transition-all duration-500 border border-outline-variant/30 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+            {/* Founder Card — split-panel spotlight style */}
+            <div className="group grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 relative">
 
-              <div className="flex-shrink-0 w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-inner border-4 border-surface-container ring-[6px] ring-primary/10 group-hover:ring-primary/30 transition-all duration-500 bg-surface-container-high mx-auto relative">
-                {/* <img
-                  src="/owner_photo.png"
-                  alt="Ahmed Anoof Sodig - Founder of Ceylon Eco Quest"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                /> */}
-                <div className="absolute inset-0 flex items-center justify-center text-primary/20 group-hover:text-primary/40 transition-colors">
-                  <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+              {/* Left color panel with photo */}
+              <div className="relative bg-gradient-to-br from-primary to-secondary p-10 md:p-12 flex flex-col items-center justify-center text-center">
+                <div className="w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/30 relative bg-white/10">
+                  <img
+                    src="/images/anoof sodig profile.jpeg"
+                    alt="Ahmed Anoof Sodig - Founder of Ceylon Eco Quest"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
+                <h2 className="font-headline text-2xl md:text-3xl text-white font-bold mt-6">Ahmed Anoof Sodig</h2>
+                <span className="font-label text-white/90 font-bold uppercase tracking-widest text-[11px] bg-white/15 backdrop-blur px-5 py-2 rounded-full mt-4">
+                  Founder
+                </span>
               </div>
 
-              <div className="space-y-8 text-on-surface-variant leading-relaxed text-[17px] font-body flex-1 flex flex-col">
-                <div className="text-center">
-                  <h2 className="font-headline text-3xl md:text-4xl text-on-surface font-bold group-hover:text-primary transition-colors">Ahmed Anoof Sodig</h2>
-                  <div className="mt-4">
-                    <span className="font-label text-primary font-bold uppercase tracking-widest text-[11px] bg-primary/10 px-5 py-2 rounded-full">Founder</span>
-                  </div>
-                </div>
-
-                <div className="grid transition-all duration-500 ease-in-out grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100">
-                  <div className="overflow-hidden">
-                    <div className="space-y-4 pt-4 text-center lg:text-justify text-on-surface-variant/90">
-                      <p>
-                        Ahmed Anoof Sodig is the founder of Ceylon Eco Quest. As we all love to travel the world, he became obsessed to travel with people around the world. As he was going school at the age of 14, his mother used to travel with tourists from the Maldives. So he used to go with his mother during tours. After traveling for a long period of time, he became addicted to traveling, and after the age of 17, he got the driving license and started driving with his mother.
-                      </p>
-                      <p>
-                        At the age of 18, he started carrying tourists by alone with his mother’s vehicle. Meanwhile, he was studying to become a chef, with the passion and interest to having to became a chef. He focused on his culinary path, giving up his favorite thing, which was tourism.
-                      </p>
-                      <p>
-                        Later, he moved to the Maldives to work as a chef in 2024 to carry on his passion. With addiction he got after traveling in Sri Lanka inspired him once again. He decided to open his company which is Ceylon Eco Quest, to emphasize quality service through the tourism industry. He also came up with that Ceylon Eco Quest will be a sustainable and eco-friendly tourism service.
-                      </p>
-                      <p>
-                        To the people as the founder of Ceylon Eco Quest, he will be taking all the responsibilities as the leader of the company, with his strong and passionate team, to provide a better quality travel experience in Sri Lanka. Let’s enjoy life’s the life journey with a beautiful travel journeys.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center mt-auto pt-4 border-t border-outline-variant/20 transition-opacity duration-500 group-hover:opacity-0">
-                  <span className="text-primary font-label text-[13px] font-bold uppercase tracking-wider">
-                    Read full profile
-                  </span>
+              {/* Right white panel with text */}
+              <div className="bg-background p-10 md:p-14 flex flex-col justify-center relative">
+                <span className="absolute top-6 right-8 font-headline text-8xl md:text-9xl text-primary/10 select-none leading-none">”</span>
+                <div className="space-y-4 text-on-surface-variant leading-relaxed text-[17px] font-body relative z-10">
+                  <p>
+                    Ahmed Anoof Sodig is the founder of Ceylon Eco Quest. As we all love to travel the world, he became obsessed to travel with people around the world. As he was going school at the age of 14, his mother used to travel with tourists from the Maldives. So he used to go with his mother during tours. After traveling for a long period of time, he became addicted to traveling, and after the age of 17, he got the driving license and started driving with his mother.
+                  </p>
+                  <p>
+                    At the age of 18, he started carrying tourists by alone with his mother’s vehicle. Meanwhile, he was studying to become a chef, with the passion and the interest that he had to became a chef. He focused on his culinary path, giving up his favorite thing, which was tourism.
+                  </p>
+                  <p>
+                    Later, he moved to the Maldives to work as a chef in 2024 to carry on his passion. With addiction he got after traveling in Sri Lanka inspired him once again. He decided to open his company which is Ceylon Eco Quest, to emphasize quality service through the tourism industry. He also came up with that Ceylon Eco Quest will be a sustainable and eco-friendly tourism service.
+                  </p>
+                  <p>
+                    As the Founder of Ceylon Eco Quest, I will be taking all the responsibilities as the leader of the Company, with my strong and passionate team, to provide a better quality travel experience in Sri Lanka.
+                    Let's enjoy the life journey with beautiful travel experiences.
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Team Member Card */}
-            <div className="group flex flex-col gap-10 bg-background p-10 md:p-14 rounded-[2.5rem] shadow-lg hover:shadow-2xl transition-all duration-500 border border-outline-variant/30 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary to-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-
-              <div className="flex-shrink-0 w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-inner border-4 border-surface-container ring-[6px] ring-secondary/10 group-hover:ring-secondary/30 transition-all duration-500 bg-surface-container-high mx-auto relative">
-                {/* <img
-                  src="/divani_photo.png"
-                  alt="Divani Perera - Computer Engineer"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                /> */}
-                <div className="absolute inset-0 flex items-center justify-center text-secondary/20 group-hover:text-secondary/40 transition-colors">
-                  <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
-                </div>
-              </div>
-
-              <div className="space-y-8 text-on-surface-variant leading-relaxed text-[17px] font-body flex-1 flex flex-col">
-                <div className="text-center">
-                  <h2 className="font-headline text-3xl md:text-4xl text-on-surface font-bold group-hover:text-secondary transition-colors">Divani Perera</h2>
-                  <div className="mt-4">
-                    <span className="font-label text-secondary font-bold uppercase tracking-widest text-[11px] bg-secondary/10 px-5 py-2 rounded-full">Computer Engineer</span>
-                  </div>
-                </div>
-
-                <div className="grid transition-all duration-500 ease-in-out grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100">
-                  <div className="overflow-hidden">
-                    <div className="space-y-4 pt-4 text-center lg:text-justify text-on-surface-variant/90">
-                      <p>
-                        Divani Perera is a passionate Computer Engineer who has been with Ceylon Eco Quest since the very beginning. As a founding team member, she plays a key role in driving the company's digital presence and delivering efficient, technology-driven solutions across our operations.
-                      </p>
-                      <p>
-                        With a strong foundation in Information Technology, Divani brings valuable technical expertise to our field — bridging the gap between eco-focused services and modern digital capabilities. Her commitment to continuous improvement and her deep understanding of IT systems enable her to contribute meaningfully to Ceylon Eco Quest's growth and innovation. Let's be organized and see the world in a Clear vision.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center mt-auto pt-4 border-t border-outline-variant/20 transition-opacity duration-500 group-hover:opacity-0">
-                  <span className="text-secondary font-label text-[13px] font-bold uppercase tracking-wider">
-                    Read full profile
-                  </span>
-                </div>
-              </div>
+            {/* Sub-section divider */}
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-px w-12 bg-outline-variant/40"></div>
+              <span className="font-label text-xs font-bold uppercase tracking-[0.3em] text-on-surface-variant/50">The Supporting Team</span>
+              <div className="h-px w-12 bg-outline-variant/40"></div>
             </div>
 
+            {/* Team Members — flat minimal profile tiles */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              {/* Team Member Tile - Assistant Manager */}
+              <div className="group flex gap-5 bg-background rounded-2xl p-6 border-l-4 border-secondary shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden bg-surface-container-high">
+                  <img
+                    src="/images/kavindi profile.jpeg"
+                    alt="Thisarani Kavindya - Assistant Manager"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-headline text-lg text-on-surface font-bold">Thisarani Kavindya</h3>
+                  <span className="font-label text-secondary font-bold uppercase tracking-widest text-[10px]">Assistant Manager</span>
+                  <p className="text-on-surface-variant/80 text-sm leading-relaxed mt-3">
+                    As the Assistant Manager, Thisarani Kavindya is dedicated to turning travel dreams into seamless realities. With a keen eye for detail and a passion for curation, she ensures every tour package is perfectly tailored to offer unforgettable experiences. Her focus on quality and customer satisfaction helps our travelers explore the world with absolute peace of mind.
+                  </p>
+                </div>
+              </div>
+              {/* Team Member Tile - Computer Engineer */}
+              <div className="group flex gap-5 bg-background rounded-2xl p-6 border-l-4 border-secondary shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden bg-surface-container-high">
+                  <img
+                    src="/images/divani profile.jpeg"
+                    alt="Divani Perera - Computer Engineer"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-headline text-lg text-on-surface font-bold">Divani Perera</h3>
+                  <span className="font-label text-secondary font-bold uppercase tracking-widest text-[10px]">Computer Engineer</span>
+                  <p className="text-on-surface-variant/80 text-sm leading-relaxed mt-3">
+                    Divani Perera is a founding team member and Computer Engineer at Ceylon Eco Quest, driving the company's digital presence with efficient, technology-driven solutions. Her strong IT foundation bridges eco-focused services with modern digital capabilities, helping the company grow and innovate with clarity.
+                  </p>
+                </div>
+              </div>
+
+
+
+            </div>
           </div>
         </div>
       </section>
 
       {/* Visual Break / Parallax */}
-      <section className="parallax-bg relative h-[600px] flex items-center justify-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCeSqqHQ6SCKw8FyYMfYjmB6intiz3HQrZOoKUiHXQD2EDInoRrFm0WNUCBw7Z_YoZfe8Zu_B4JtOdyD32ZmJLzhkzFbpUbswMLLoIZHqim5R4BHq64fjkbNhpC8LlVmUejDgn-XbKCGFnZT6mAA0zY9U4rUKOCGQJ9mROQuSMH4MtS3XwQiI4GfExMjsU1EcO7U4XTgxwdSxdiXfG58o50aSXTtP0aBPX_USGS73vxCn3FzLP4ltOEfyWQa6de-GNBJ0fM4tIuLA')" }}>
+      <section className="parallax-bg relative h-[600px] flex items-center justify-center" style={{ backgroundImage: "url('images/vision banner 2.jpeg')" }}>
         <div className="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
         <div className="relative z-10 text-center max-w-3xl px-6">
           <h2 className="font-headline text-3xl md:text-5xl text-white font-bold mb-6 italic leading-snug">
-            "We believe a quest should leave you changed, not the destination."
+            "Reconnect with Nature, Embrace Local Culture, And Uncover the true Spirit of Sri Lanka"
           </h2>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import ImageSlideshow from '../components/ImageSlideshow';
 
 const Destinations = () => {
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -48,7 +49,7 @@ const Destinations = () => {
       id: 'nuwara-eliya',
       name: 'Nuwara Eliya',
       longDesc: 'The charming hill city located in the Central highlands of Sri Lanka, known as "Little England." Having a cool climate, misty mountains, and tea plantations, with a rich colonial heritage.',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBanW6tJL-27yIw2L2TK1MlIVEP2tpIUVCcuU4Dy0fNjgFJSV8D0XcnxL2HQZ9hlkYkZ2kEw2MWNvJIhDoiKUtZYQuBhRLzIpLvYPWMvWkaArzUZgxm8LqoJ8keiuRmngSHo1FGxMiOiG566oI9SGytaJ4a_iBU2PB__x38_TT0Y-c_gv2WALmvhrRwfLidnxV0yl1HMOcJIOMxQ99FZ1TbCNZEpbs1Wv6dgVEG3qyN_isRQARr28g6ZaMoH2CKpQsjaoYotddzyPw',
+      image: '/images/nuwaraeliya.jpeg',
       details: [
         {
           title: 'Location & Geography',
@@ -96,7 +97,7 @@ const Destinations = () => {
       id: 'knuckles',
       name: 'Knuckles Mountain Range',
       longDesc: 'The Knuckles Mountain Range is one of the most spectacular natural landscapes in Sri Lanka, renowned for its rugged beauty, rich biodiversity, and cultural significance.',
-      image: '/images/knuckles_mountain_range.png',
+      image: '/images/knuckles.jpeg',
       details: [
         {
           title: 'Location & Origin',
@@ -126,7 +127,7 @@ const Destinations = () => {
       id: 'ella',
       name: 'Ella Highlands',
       longDesc: 'Ella Highlands is one of the most scenic and peaceful regions in Sri Lanka, located in the central hill country of Uva Province. It is famous for its breathtaking mountain landscapes, lush tea plantations, and cool climate.',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0D2dEXKb_32XmIyiXqH6wxR8mfi6WptFCeGi13xX12lbM6eOJhLw0N6lROF87LNEX1mWVXAQWMqt6MClD5Gylxobj9yFm8bY4Q7OJkkWoD7N5Qvr7mkFSHw503VPfDSQ7vBiPzlQ2yE5JSRJTM6LAdhAWueeEiTQDJWaVsjkhDPT1BQjOu1hRHehZhB-gkD_rNMRq05UUI7sCyztgOhyubEQXgfHmriZ5i03OguMkYK7ebX2j9l2NGW295gja3Iwuk4jsqaoHgls',
+      image: '/images/ella.jpeg',
       details: [
         {
           title: 'Geography & Atmosphere',
@@ -156,7 +157,7 @@ const Destinations = () => {
   const anuradhapuraData = {
     id: 'anuradhapura',
     name: 'Anuradhapura',
-    image: '/images/anuradhapura_new.png',
+    image: '/images/anuradhapura.jpeg',
     longDesc: 'Anuradhapura is one of the oldest continuously inhabited cities in the world and a major cultural and spiritual center in Sri Lanka. It served as the island’s first capital from around the 4th century BCE to the 11th century CE, making it a cornerstone of Sri Lankan civilization.',
     details: [
       {
@@ -181,7 +182,7 @@ const Destinations = () => {
   const polonnaruwaData = {
     id: 'polonnaruwa',
     name: 'Polonnaruwa',
-    image: '/images/polonnaruwa.png',
+    image: '/images/polonnaruwa-home.jpg',
     longDesc: 'Polonnaruwa which is an important historical city in Sri Lanka served as the island\'s capital after the decline of Anuradhapura. Flourishing between the 11th and 13th centuries, it is now a well-preserved archaeological site and a designated UNESCO World Heritage Site.',
     details: [
       {
@@ -206,7 +207,7 @@ const Destinations = () => {
   const kandyData = {
     id: 'kandy',
     name: 'Kandy',
-    image: '/images/kandy_new.png',
+    image: '/images/kandy-destination.jpeg',
     longDesc: 'Kandy, which is a historical & cultural city located in the central highlands of Sri Lanka, surrounded by lush mountains and scenic landscapes, served as the last royal capital of the Sinhalese Kingdom before falling to the British in 1815. Kandy is a vibrant city blending tradition, religion, and natural beauty, and it\'s recognized as a UNESCO World Heritage Site.',
     details: [
       {
@@ -231,7 +232,7 @@ const Destinations = () => {
   const galleData = {
     id: 'galle',
     name: 'Galle',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDX7uMGghsY3yp8doYKgJSu5I0nyfRzHc9ydH2hP_8xlMYH-_e_BIMQJyUqr3NH5d8MBbP6GyKyo20f0_qLsZ_f2r8oKuHVV-fCcCNBSy29liUN3F7RshjNpc1HCXMQHo_ZDGktGuMRmtSGDofGR7d_kGk1VYaIX9zsQa4ECXz6rNs73NdXwE7q9atNNSf45Y37WABbZzRKSxvu6CjTxftZFdhWLuU4MtihptACVw99HixR4ciSgRi4wRwgcidzAn_oq3aKwHGA55Q',
+    image: '/images/galle-destination.jpeg',
     longDesc: 'Galle is a historic coastal city located in the Southern Province of Sri Lanka. Known for its rich colonial heritage, scenic coastline, and vibrant culture, Galle is also one of the country\'s most popular tourist destinations.',
     details: [
       {
@@ -281,7 +282,7 @@ const Destinations = () => {
   const trincomaleeData = {
     id: 'trincomalee',
     name: 'Trincomalee',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCjk9tz9G5xOBLUuJN2YYViQK4VCWtYtIMT8sUPTZGNxt7LhLLyT2m-HGYB5ue8garE6nKiejuS8EHYv_lIsRFiIyeM18n8MFiHKjIzTl4SMLgizL7fgUDgowJ-PyX6w6I9FUqqypyMvflCZRXWrv7r6B-bkcbl6DAiYCfnx8vVeBKc0up54qkJbEIPZjnJsr1fD6WnRrhbKgFD6dYq357kgoohdicm2UCTdID2as8sUoKs0vhN94IXneqOZPMpC__fOKiiW0X9xGI',
+    image: '/images/trincomalee.jpeg',
     longDesc: "Trincomalee is a historic port city located on the northeastern coast of Sri Lanka, known for its natural deep water harbour, pristine beaches, and rich cultural heritage. It is one of the island's most important coastal destinations.",
     details: [
       {
@@ -310,7 +311,7 @@ const Destinations = () => {
   const yalaData = {
     id: 'yala',
     name: 'Yala National Park',
-    image: '/images/yala_new.png',
+    image: '/images/yala.jpeg',
     longDesc: 'Yala National Park is the most famous and widely visited wildlife reserve in Sri Lanka, located in the Southeastern region of the island, it is renowned for its rich biodiversity and thrilling safari experiences, especially its reputation as one of the best places in the world to see leopards in the wild.',
     details: [
       {
@@ -335,7 +336,7 @@ const Destinations = () => {
   const udawalawaData = {
     id: 'udawalawa',
     name: 'Udawalawa National Park',
-    image: '/images/udawalawa_new.png',
+    image: '/images/udawalawa.jpeg',
     longDesc: "Udawalawa National Park is one of Sri Lanka's most important wildlife reserves, best known for its large population of Sri Lankan elephants and excellent safari opportunities. Located in the south-central part of the island, it offers a more open and accessible wildlife experience compared to denser parks like Yala.",
     details: [
       {
@@ -378,17 +379,24 @@ const Destinations = () => {
     ]
   };
 
+  const destinationsSlides = [
+    '/images/destination/dest 1.jpeg',
+    '/images/destination/dest 2.jpeg',
+    '/images/destination/dest 3.jpeg',
+    '/images/destination/dest 4.jpeg',
+  ];
 
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-[716px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          {/* <img
             className="w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBanW6tJL-27yIw2L2TK1MlIVEP2tpIUVCcuU4Dy0fNjgFJSV8D0XcnxL2HQZ9hlkYkZ2kEw2MWNvJIhDoiKUtZYQuBhRLzIpLvYPWMvWkaArzUZgxm8LqoJ8keiuRmngSHo1FGxMiOiG566oI9SGytaJ4a_iBU2PB__x38_TT0Y-c_gv2WALmvhrRwfLidnxV0yl1HMOcJIOMxQ99FZ1TbCNZEpbs1Wv6dgVEG3qyN_isRQARr28g6ZaMoH2CKpQsjaoYotddzyPw"
             alt="Wide cinematic shot of misty Sri Lankan tea plantations"
-          />
+          /> */}
+          <ImageSlideshow images={destinationsSlides} />
           <div className="absolute inset-0 bg-primary/30 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface"></div>
         </div>
@@ -405,32 +413,29 @@ const Destinations = () => {
       </section>
 
       {/* Filter & Search Section */}
-      <section className="relative z-20 -mt-12 px-6">
-        <div className="max-w-5xl mx-auto bg-surface-container-lowest p-4 md:p-6 rounded-full shadow-xl shadow-primary/5 flex justify-center items-center">
-          <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 flex-col sm:flex-row">
+      <section className="relative z-20 -mt-12 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto bg-surface-container-lowest p-4 md:p-6 rounded-2xl md:rounded-full shadow-xl shadow-primary/5">
+          <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4">
 
-            <button onClick={() => scrollToSection('nature')} className="font-headline px-6 py-2 rounded-full bg-transparent text-primary hover:bg-secondary-container/30 font-bold text-sm border border-primary/10 transition-all flex items-center gap-2">
-              <span className="material-symbols-outlined text-lg">forest</span> Nature
+            <button onClick={() => scrollToSection('nature')} className="font-headline px-4 md:px-6 py-2 rounded-full bg-transparent text-primary hover:bg-secondary-container/30 font-bold text-[13px] md:text-sm border border-primary/10 transition-all flex items-center gap-1.5 md:gap-2">
+              <span className="material-symbols-outlined text-base md:text-lg">forest</span> Nature
             </button>
-            <button onClick={() => scrollToSection('culture')} className="font-headline px-6 py-2 rounded-full bg-transparent text-primary hover:bg-secondary-container/30 font-bold text-sm border border-primary/10 transition-all flex items-center gap-2">
-              <span className="material-symbols-outlined text-lg">temple_hindu</span> Culture
+            <button onClick={() => scrollToSection('culture')} className="font-headline px-4 md:px-6 py-2 rounded-full bg-transparent text-primary hover:bg-secondary-container/30 font-bold text-[13px] md:text-sm border border-primary/10 transition-all flex items-center gap-1.5 md:gap-2">
+              <span className="material-symbols-outlined text-base md:text-lg">temple_hindu</span> Culture
             </button>
-            <button onClick={() => scrollToSection('coast')} className="font-headline px-6 py-2 rounded-full bg-transparent text-primary hover:bg-secondary-container/30 font-bold text-sm border border-primary/10 transition-all flex items-center gap-2">
-              <span className="material-symbols-outlined text-lg">waves</span> Coast
+            <button onClick={() => scrollToSection('coast')} className="font-headline px-4 md:px-6 py-2 rounded-full bg-transparent text-primary hover:bg-secondary-container/30 font-bold text-[13px] md:text-sm border border-primary/10 transition-all flex items-center gap-1.5 md:gap-2">
+              <span className="material-symbols-outlined text-base md:text-lg">waves</span> Coast
             </button>
-            <button onClick={() => scrollToSection('wildlife')} className="font-headline px-6 py-2 rounded-full bg-transparent text-primary hover:bg-secondary-container/30 font-bold text-sm border border-primary/10 transition-all flex items-center gap-2">
-              <span className="material-symbols-outlined text-lg">pets</span> Wildlife
+            <button onClick={() => scrollToSection('wildlife')} className="font-headline px-4 md:px-6 py-2 rounded-full bg-transparent text-primary hover:bg-secondary-container/30 font-bold text-[13px] md:text-sm border border-primary/10 transition-all flex items-center gap-1.5 md:gap-2">
+              <span className="material-symbols-outlined text-base md:text-lg">pets</span> Wildlife
             </button>
-            {/* <button onClick={() => scrollToSection('adventure')} className="font-headline px-6 py-2 rounded-full bg-transparent text-primary hover:bg-secondary-container/30 font-bold text-sm border border-primary/10 transition-all flex items-center gap-2">
-              <span className="material-symbols-outlined text-lg">hiking</span> Adventure
-            </button> */}
           </div>
         </div>
       </section>
 
       {/* Destination Grid Section 01: Nature */}
-      <section id="nature" className="py-24 px-6 max-w-screen-2xl mx-auto border-b border-outline-variant/10">
-        <div className="mb-24">
+      <section id="nature" className="py-16 md:py-24 px-6 max-w-screen-2xl mx-auto border-b border-outline-variant/10">
+        <div className="mb-16 md:mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <div className="lg:col-span-5">
               <span className="font-label text-xs font-bold text-secondary uppercase tracking-[0.5em] mb-6 block">nature & scenic</span>
@@ -483,7 +488,7 @@ const Destinations = () => {
       </section>
 
       {/* Destination Grid Section 02: Culture & Heritage */}
-      <section className="py-24 bg-surface-container-low px-6">
+      <section className="py-16 md:py-24 bg-surface-container-low px-6">
         <div className="max-w-screen-2xl mx-auto">
           <div className="flex flex-col gap-16">
             <div className="w-full max-w-3xl mx-auto text-center">
@@ -570,7 +575,7 @@ const Destinations = () => {
       </section>
 
       {/* Destination Grid Section 03: Coastal */}
-      <section className="py-24 px-6 max-w-screen-2xl mx-auto">
+      <section className="py-16 md:py-24 px-6 max-w-screen-2xl mx-auto">
         {/* <div className="text-center mb-16">
           <span className="font-label text-sm font-bold text-secondary uppercase tracking-widest mb-2 block">The Sapphire Coast</span>
           <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary italic">Blue Horizons</h2>
@@ -660,7 +665,7 @@ const Destinations = () => {
       </section>
 
       {/* Destination Grid Section 04: Wildlife */}
-      <section className="py-24 bg-surface-container-low px-6">
+      <section className="py-16 md:py-24 bg-surface-container-low px-6">
         <div className="max-w-screen-2xl mx-auto">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-full md:w-1/3">
@@ -907,13 +912,39 @@ const Destinations = () => {
                     {selectedLocation.longDesc}
                   </p>
 
-                  {selectedLocation.details && (
+                  {/* {selectedLocation.details && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                       {selectedLocation.details.map((section, idx) => (
                         <div key={idx} className="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
                           <h4 className="font-headline font-bold text-primary mb-3 uppercase tracking-wider text-sm">{section.title}</h4>
                           <p className="text-on-surface-variant text-base leading-relaxed line-clamp-4 hover:line-clamp-none transition-all whitespace-pre-line">{section.content}</p>
                         </div>
+                      ))}
+                    </div>
+                  )} */}
+
+                  {selectedLocation.details && (
+                    <div className="flex flex-col gap-4 mb-16">
+                      {selectedLocation.details.map((section, idx) => (
+                        <details
+                          key={idx}
+                          className="group bg-surface-container-low rounded-xl border border-outline-variant/10 overflow-hidden"
+                          open={idx === 0}
+                        >
+                          <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none select-none">
+                            <h4 className="font-headline font-bold text-primary uppercase tracking-wider text-sm">
+                              {section.title}
+                            </h4>
+                            <span className="material-symbols-outlined text-primary shrink-0 transition-transform duration-300 group-open:rotate-180">
+                              expand_more
+                            </span>
+                          </summary>
+                          <div className="px-6 pb-6">
+                            <p className="text-on-surface-variant text-base leading-relaxed whitespace-pre-line">
+                              {section.content}
+                            </p>
+                          </div>
+                        </details>
                       ))}
                     </div>
                   )}

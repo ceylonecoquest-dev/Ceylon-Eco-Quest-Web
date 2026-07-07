@@ -5,9 +5,9 @@ const Footer = () => {
     <footer className="w-full relative z-10 bg-slate-50 dark:bg-slate-950">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/15 to-transparent pointer-events-none"></div>
       <div className="flex flex-col md:flex-row justify-between items-center w-full px-12 py-10 border-t border-slate-200/50 dark:border-slate-800/50 relative z-10">
-        <div className="mb-6 md:mb-0">
+        <div className="mb-6 md:mb-0 text-center md:text-left">
           <div className="font-headline text-xl font-bold text-primary dark:text-primary-fixed">Ceylon Eco Quest</div>
-          <p className="font-body text-sm tracking-wide text-on-surface-variant dark:text-slate-400 mt-2 max-w-xs">
+          <p className="font-body text-sm tracking-wide text-on-surface-variant dark:text-slate-400 mt-2 max-w-xs mx-auto md:mx-0">
             Reconnect with Nature, Respect Every Step.
           </p>
         </div>
@@ -23,7 +23,7 @@ const Footer = () => {
               Contact Us
             </Link> */}
           </div>
-          <p className="font-body text-sm tracking-wide text-on-surface-variant dark:text-slate-400 mt-4 md:mt-0">
+          <p className="font-body text-sm tracking-wide text-on-surface-variant dark:text-slate-400 mt-4 md:mt-0 text-center md:text-left">
             © {new Date().getFullYear()} Ceylon Eco Quest. All rights reserved.
           </p>
         </div>
