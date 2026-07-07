@@ -47,7 +47,7 @@ const Navbar = () => {
       <nav className="fixed top-2 w-full z-50 px-4 sm:px-8 lg:px-16 flex items-center pointer-events-none">
 
         {/* Left: Logo + Company Name */}
-        {/* <div className="flex-1 flex items-center gap-3 pointer-events-auto">
+        <div className="flex-1 flex items-center gap-3 pointer-events-auto">
           <Link to="/" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full liquid-glass flex items-center justify-center shadow-sm flex-shrink-0">
             <img
               alt="Ceylon Eco Quest Logo"
@@ -60,7 +60,7 @@ const Navbar = () => {
               Ceylon Eco Quest
             </span>
           </div>
-        </div> */}
+        </div>
 
         {/* Mobile Menu Overlay */}
         <div
